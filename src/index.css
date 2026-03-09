@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-click-blue: #00d2ff;
+  --color-click-purple: #9d50bb;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  @keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(0, 210, 255, 0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.8)); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+:root {
+  background-color: #050505;
+  color: white;
+}
+
+.bg-click-gradient {
+  background: radial-gradient(circle at top right, rgba(157, 80, 187, 0.15), transparent),
+              radial-gradient(circle at bottom left, rgba(0, 210, 255, 0.15), transparent),
+              #050505;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
